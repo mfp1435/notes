@@ -11,17 +11,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class PlanViewModel(application: Application) : AndroidViewModel(application){
-
-    private val planDao =PlanDatabase.PlanDatabase.getDatabase(application).planDao()
+    private val planDao = PlanDatabase.getDatabase(application).planDao()
     private val repository : PlanRepository
 
     val getAllPlan: LiveData<List<PlanInput>>
-    val getAllPriorityPlan: LiveData<List<PlanInput>>
 
     init {
         repository = PlanRepository(planDao)
         getAllPlan = repository.getAllPlan()
-        getAllPriorityPlan = repository.getAllPriorityPlan()
     }
 
     fun insert(planInput: PlanInput){

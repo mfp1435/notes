@@ -5,9 +5,8 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-class PlanDatabase {
 
-    @Database(entities = arrayOf(PlanInput::class), version = 1, exportSchema = false)
+    @Database(entities = [PlanInput::class], version = 1, exportSchema = false)
     abstract class PlanDatabase : RoomDatabase() {
         abstract fun planDao(): PlanDao
         companion object {
@@ -30,4 +29,3 @@ class PlanDatabase {
             }
         }
     }
-}

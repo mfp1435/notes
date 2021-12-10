@@ -18,9 +18,10 @@ interface PlanDao {
     @Query("DELETE FROM plan_table")
     suspend fun deleteAll()
 
-    @Query("SELECT * FROM plan_table ORDER BY alarm DESC")
+    @Query("SELECT * FROM plan_table ORDER BY title DESC")
     fun getAllPlan(): LiveData<List<PlanInput>>
-    abstract fun searchDatabase(searchQuery: String): LiveData<List<PlanInput>>
-    abstract fun getAllPriorityPlan(): LiveData<List<PlanInput>>
+
+    @Query("select * from plan_table where title like :searchQuery order by title desc")
+    fun searchDatabase(searchQuery: String): LiveData<List<PlanInput>>
 
 }

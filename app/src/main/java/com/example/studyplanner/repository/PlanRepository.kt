@@ -14,8 +14,6 @@ class PlanRepository ( val planDao : PlanDao ){
 
     fun getAllPlan() : LiveData<List<PlanInput>> = planDao.getAllPlan()
 
-    fun getAllPriorityPlan() : LiveData<List<PlanInput>> = planDao.getAllPriorityPlan()
-
     fun searchDatabase(searchQuery: String): LiveData<List<PlanInput>> {
         return planDao.searchDatabase(searchQuery)
     }

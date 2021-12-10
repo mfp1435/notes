@@ -15,6 +15,4 @@ data class PlanInput(
     var id: Int,
     var title: String,
     var description: String
-    /*var time: Time,
-    var date: Date*/
 ) : Parcelable

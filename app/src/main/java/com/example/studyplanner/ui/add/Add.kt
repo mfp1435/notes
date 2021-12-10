@@ -14,8 +14,7 @@ import com.example.studyplanner.databinding.FragmentAddBinding
 import com.example.studyplanner.viewmodel.PlanViewModel
 
 class Add : Fragment() {
-
-private val viewModel: PlanViewModel by viewModels()
+    private val viewModel: PlanViewModel by viewModels()
 
 
     override fun onCreateView(
